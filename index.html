@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon" />
 
     <link rel="stylesheet" href="src/sass/main.scss" />
-    <script type="module" src="src/js/controller.js"></script>
+    <script defer src="src/js/controller.js"></script>
 
     <title>forkify // Search over 1,000,000 recipes</title>
   </head>
@@ -73,7 +73,7 @@
                         <h4 class="preview__name">
                           Pasta with Tomato Cream ...
                         </h4>
-                        <p class="preview__publisher">The Pioneer Woman</p>
+                        <p class="preview__author">The Pioneer Woman</p>
                       </div>
                     </a>
                   </li> -->
@@ -165,6 +165,7 @@
             <span>Pasta with tomato cream sauce</span>
           </h1>
         </figure>
+
         <div class="recipe__details">
           <div class="recipe__info">
             <svg class="recipe__info-icon">
@@ -179,6 +180,7 @@
             </svg>
             <span class="recipe__info-data recipe__info-data--people">4</span>
             <span class="recipe__info-text">servings</span>
+
             <div class="recipe__info-buttons">
               <button class="btn--tiny btn--increase-servings">
                 <svg>
@@ -192,6 +194,7 @@
               </button>
             </div>
           </div>
+
           <div class="recipe__user-generated">
             <svg>
               <use href="src/img/icons.svg#icon-user"></use>
@@ -203,6 +206,7 @@
             </svg>
           </button>
         </div>
+
         <div class="recipe__ingredients">
           <h2 class="heading--2">Recipe ingredients</h2>
           <ul class="recipe__ingredient-list">
@@ -216,7 +220,7 @@
                 pasta
               </div>
             </li>
-          
+
             <li class="recipe__ingredient">
               <svg class="recipe__icon">
                 <use href="src/img/icons.svg#icon-check"></use>
@@ -229,6 +233,7 @@
             </li>
           </ul>
         </div>
+
         <div class="recipe__directions">
           <h2 class="heading--2">How to cook it</h2>
           <p class="recipe__directions-text">
@@ -247,7 +252,7 @@
             </svg>
           </a>
         </div>
-        
+        -->
       </div>
     </div>
 
@@ -258,13 +263,13 @@
         <div class="upload__column">
           <h3 class="upload__heading">Recipe data</h3>
           <label>Title</label>
-          <input value="TEST" required name="title" type="text" />
+          <input value="TEST23" required name="title" type="text" />
           <label>URL</label>
-          <input value="TEST" required name="sourceUrl" type="text" />
+          <input value="TEST23" required name="sourceUrl" type="text" />
           <label>Image URL</label>
-          <input value="TEST" required name="image" type="text" />
+          <input value="TEST23" required name="image" type="text" />
           <label>Publisher</label>
-          <input value="TEST" required name="publisher" type="text" />
+          <input value="TEST23" required name="publisher" type="text" />
           <label>Prep time</label>
           <input value="23" required name="cookingTime" type="number" />
           <label>Servings</label>
