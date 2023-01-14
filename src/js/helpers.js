@@ -1,6 +1,5 @@
 import { async } from 'regenerator-runtime';
-import { TIMEOUT_SEC } from './config.js';
-
+import { TIME_OUT_SEC } from './config';
 const timeout = function (s) {
   return new Promise(function (_, reject) {
     setTimeout(function () {
@@ -9,7 +8,7 @@ const timeout = function (s) {
   });
 };
 
-export const AJAX = async function (url, uploadData = undefined) {
+export const AJAX = async function (url, uploadData = null) {
   try {
     const fetchPro = uploadData
       ? fetch(url, {
@@ -21,7 +20,7 @@ export const AJAX = async function (url, uploadData = undefined) {
         })
       : fetch(url);
 
-    const res = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
+    const res = await Promise.race([fetch(url), timeout(TIME_OUT_SEC)]);
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
@@ -31,11 +30,9 @@ export const AJAX = async function (url, uploadData = undefined) {
   }
 };
 
-/*
 export const getJSON = async function (url) {
   try {
-    const fetchPro = fetch(url);
-    const res = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
+    const res = await Promise.race([fetch(url), timeout(TIME_OUT_SEC)]);
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
@@ -55,7 +52,7 @@ export const sendJSON = async function (url, uploadData) {
       body: JSON.stringify(uploadData),
     });
 
-    const res = await Promise.race([fetchPro, timeout(TIMEOUT_SEC)]);
+    const res = await Promise.race([fetchPro, timeout(TIME_OUT_SEC)]);
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
@@ -64,4 +61,3 @@ export const sendJSON = async function (url, uploadData) {
     throw err;
   }
 };
-*/

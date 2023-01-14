@@ -1,9 +1,9 @@
-import View from './View.js';
-import icons from 'url:../../img/icons.svg'; // Parcel 2
+import View from './View';
+import icons from 'url:../../img/icons.svg';
 
 class AddRecipeView extends View {
   _parentElement = document.querySelector('.upload');
-  _message = 'Recipe was successfully uploaded :)';
+  _message = 'Recipe was successfuly added';
 
   _window = document.querySelector('.add-recipe-window');
   _overlay = document.querySelector('.overlay');
@@ -30,7 +30,7 @@ class AddRecipeView extends View {
     this._overlay.addEventListener('click', this.toggleWindow.bind(this));
   }
 
-  addHandlerUpload(handler) {
+  _addHandlerUpload(handler) {
     this._parentElement.addEventListener('submit', function (e) {
       e.preventDefault();
       const dataArr = [...new FormData(this)];
